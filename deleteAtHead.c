@@ -15,14 +15,14 @@ void insertAtEnd(node** head,int data)
         *head = temp;
     else
     {
-        Node* tempHead = *head;
-        while(tempHead->next)
-            tempHead = tempHead->next;
-        tempHead->next = temp;
+        node* s = *head;
+        while(s->next)
+            s = s->next;
+        s->next = temp;
     }
 }
 
-void deletionAtHead(Node** head)
+void deletionAtHead(node** head)
 {
     if(!(*head)->next)
     {
@@ -31,13 +31,13 @@ void deletionAtHead(Node** head)
     }
     else
     {
-        Node* tempHead = *head;
+        node* s = *head;
         *head = (*head)->next;
-        free(tempHead);
+        free(s);
     }
 }
 
-void printLinkedList(Node* head)
+void printLinkedList(node* head)
 {
     if(!head)
         printf("Empty Linked List...\n");
