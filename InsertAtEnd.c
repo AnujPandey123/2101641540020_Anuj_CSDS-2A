@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
-struct node{
+typedef struct node{
 	int data;
 	struct node* address;
 };
