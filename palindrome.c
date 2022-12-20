@@ -14,13 +14,13 @@ struct Node {
 
    Node* middleLinkedList(Node* head)
     {
-        Node* hare = head, *tortoise = head;
-        while(hare&& hare->next && hare->next->next)
+        Node* a = head, *b= head;
+        while(a&& a->next &&a->next->next)
         {
-            tortoise = tortoise->next;
-            hare = hare->next->next;
+            b = b->next;
+            a = a->next->next;
         }
-        return tortoise->next;
+        return b->next;
     }
     
     Node* reverseLinkedList(Node* head)
