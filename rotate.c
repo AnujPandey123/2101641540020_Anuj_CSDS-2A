@@ -11,7 +11,7 @@ struct Node {
 
     Node* rotate(Node* head, int k)
     {
-        Node* newHead = head, *pointer;
+        Node* newHead = head, *temp;
         
         while(--k)
             newHead = newHead->next;
@@ -19,14 +19,14 @@ struct Node {
         if(newHead->next == NULL)
             return head;
             
-        pointer = newHead;
+        temp = newHead;
         newHead = newHead->next;
-        pointer->next = NULL;
-        pointer = newHead;
+        temp->next = NULL;
+        temp = newHead;
         
-        while(pointer->next)
-            pointer = pointer->next;
-        pointer->next = head;
+        while(temp->next)
+            temp = temp->next;
+        temp->next = head;
         
         return newHead;
     }
